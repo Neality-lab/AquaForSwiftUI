@@ -29,8 +29,8 @@ Button("Press Me") {
 
 **Parameters:**
 - `aquaColor`: The color applied to the button. This color is used for the button's frame and is visible when the button is in its normal state.
-- `colorShadow`: A Boolean value that determines whether to apply a shadow effect to the button. If `true`, a shadow will be added for a more pronounced effect.
-- `shape`: Defines the shape of the button. Options include `.capsule` (a rounded pill shape) and `.rectangle(cornerRadius: CGFloat)` (a rectangle with rounded corners).
+- `colorShadow`: A Boolean value that determines whether to apply a shadow effect to the button. If `true`, a shadow will be added for a more pronounced effect. Default value is true.
+- `shape`: Defines the shape of the button. Options include `.capsule` (a rounded pill shape) and `.rectangle(cornerRadius: CGFloat)` (a rectangle with rounded corners). Default value is .capsule. 
 
 **Note:** `AquaButtonStyle` is composed using `AquaFrameModifier` to apply the color, shadow, and shape styling.
 
@@ -46,7 +46,7 @@ Toggle("Toggle Option", isOn: $isOn)
 **Parameters:**
 - `style`: The style of the toggle (`.toggle` or `.push`).
 - `aquaColor`: The color applied to the toggle. Changes the appearance based on the toggle's state.
-- `colorShadow`: A Boolean value to determine whether to apply a shadow effect.
+- `colorShadow`: A Boolean value to determine whether to apply a shadow effect. Default value is true. 
 
 **Note:** `AquaToggleStyle` is also composed using `AquaFrameModifier` to handle the color, shadow, and shape styling.
 
@@ -61,6 +61,6 @@ Text("Styled Text")
 
 **Parameters:**
 - `aquaColor`: The primary color applied to the frame.
-- `aquaOpacity`: The opacity level of the frame's color.
-- `colorShadow`: A Boolean value to determine whether to apply a shadow effect to the frame.
+- `aquaOpacity`: The opacity level of the frame's color. Default value is 0.5. 
+- `colorShadow`: A Boolean value to determine whether to apply a shadow effect to the frame. Default value is true. 
 - `shape`: The shape of the frame (`.capsule` or `.rectangle(cornerRadius: CGFloat)`).
