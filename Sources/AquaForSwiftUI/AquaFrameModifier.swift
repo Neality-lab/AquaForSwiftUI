@@ -15,6 +15,7 @@ public struct AquaFrameModifier: ViewModifier {
     var colorShadow: Bool
     var shape: AquaFrameShape
     var highlight: Bool = true
+    var higlightLevel: CGFloat
     
     public func body(content: Content) -> some View {
         content
@@ -170,8 +171,10 @@ public struct AquaFrameModifier: ViewModifier {
                             .blur(radius: edgePadding / 5) // Blur effect for highlight
                         }
                         .padding(edgePadding) // Additional padding for inner ZStack
+                        .opacity(higlightLevel)
                     }
                 }
+                    .allowsHitTesting(false)
             )
     }
 }
@@ -184,7 +187,7 @@ public enum AquaFrameShape {
 
 // Extension to easily apply the AquaFrameModifier to any view
 public extension View {
-    public func aquaFrameModifier(aquaColor: Color, aquaOpacity: CGFloat = 0.5, colorShadow: Bool = true, shape: AquaFrameShape) -> some View {
-        self.modifier(AquaFrameModifier(aquaColor: aquaColor, aquaOpacity: aquaOpacity, colorShadow: colorShadow, shape: shape))
+    func aquaFrameModifier(aquaColor: Color, aquaOpacity: CGFloat = 0.5, colorShadow: Bool = true, shape: AquaFrameShape, highlightLevel: CGFloat = 0.8) -> some View {
+        self.modifier(AquaFrameModifier(aquaColor: aquaColor, aquaOpacity: aquaOpacity, colorShadow: colorShadow, shape: shape, higlightLevel: highlightLevel))
     }
 }
