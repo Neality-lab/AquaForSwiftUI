@@ -16,7 +16,7 @@ let package = Package(
         // Library target
         .target(
             name: "AquaForSwiftUI", // Name of the target
-            dependencies: [] // Other targets or external packages this target depends on
+            dependencies: ["AquaForSwiftUI"] // Other targets or external packages this target depends on
         ),
         
         // Test target
